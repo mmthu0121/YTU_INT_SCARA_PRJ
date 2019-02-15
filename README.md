@@ -1,0 +1,1 @@
+# YTU_INT_SCARA_PRJ

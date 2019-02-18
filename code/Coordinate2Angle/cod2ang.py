@@ -10,7 +10,7 @@ def cod2ang(x,y,l1,l2):
 
 	r = math.sqrt(x2 + y2);
 
-	a2 = cmath.acos(x2 + y2 - l12 - l22)/(2*l1*l2);
+	a2 = cmath.acos((x2 + y2 - l12 - l22)/(2*l1*l2));
 	a2d = a2*180 / math.pi;
 	a2d = a2d.real;
 

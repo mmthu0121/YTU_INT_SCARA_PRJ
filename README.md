@@ -7,4 +7,5 @@ Areas that we applied in this project are
 2. Machine Vision with USB Webcam + Raspberry Pi Camera
 3. Robotic Operating System (ROS)
 4. Python Programming
-5. Raspberry Pi 3 with Arduino Mega (slave)
+5. C++ Programming
+6. Raspberry Pi 3 with Arduino Mega (slave)

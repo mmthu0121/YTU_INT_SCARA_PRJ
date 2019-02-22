@@ -1,4 +1,5 @@
-// This is the version 1.1 of the Motor Control Code
+// This is the version 1.2 of the Motor Control Code
+//Added the kinematic equations for the 2 Dof arms.
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -126,24 +127,21 @@ int motorControl(int MotorPinA, int MotorPinB, int MotorPWM, int des_angle, int 
 
 void loop() {
   now_time    = millis() / 1000.0;  // we will be using a single clock for both motor
-//  double x = 13.0;
-//  double y = 11.0;
+/*x = desired x coordinate point
+  y = desired y coordinate point
+  link_1 = shoulder arm length
+  link_2 = elbow arm length
+  */
   float a1 = ((x*x) + (y*y) - (link_1*link_1) - (link_2*link_2))/(2*link_1*link_2);
   double q2 = acos(a1); //shoulder angle
   double q1 = (atan(y/x)) - atan((link_2*sin(q2)) / (link_1 + (link_2*cos(q2))));
   double q11 = (180.0/pi) * q1;
   double q22 = (180.0/pi) * q2;
-  
-//  Serial.print(actual);
-//  Serial.print(" ");
-//  Serial.println(q22);
+//----------------------------------------------------
   
   des_angle1  = q11;
   des_angle2  = q22;
 
-//  Serial.print(des_angle1);
-//  Serial.print("  ");
-//  Serial.println(des_angle2);
   
   //motor1 control
   prv_error1 = motorControl(MotorPin1, MotorPin2, MotorPWM1, des_angle1, prv_error1, counts1, 70, 0.2, 0.01);                  

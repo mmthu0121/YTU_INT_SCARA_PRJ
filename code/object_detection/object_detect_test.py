@@ -1,9 +1,9 @@
 """
 
 The following code detects a particular colored object and
-gives the location of that object.
+gives the location of it.
 
-Also returns the difference between that object and the centre of the camera frame
+Returns the difference between that object and the centre of the camera frame
 
 This particular code is inspired from pyimagesearch.com
 
